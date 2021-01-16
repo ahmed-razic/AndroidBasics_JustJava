@@ -26,7 +26,18 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        displayPrice(quantity * 5);
+        //String priceMessage = "Amount due: $" + (5 * quantity);
+        //String priceMessage = "That would be $" + (5 * quantity) + " please.";
+        //String priceMessage = "You owe ten bucks, dude!";
+        //String priceMessage = (5 * quantity) +  " dollars for " + quantity + " cups of coffee. Pay Up.";
+        String priceMessage = "Total: $" + (5 * quantity);
+        priceMessage = priceMessage + "\nThank you";
+        displayMessage(priceMessage);
+    }
+
+    private void displayMessage(String message) {
+        TextView priceTextVIew = (TextView) findViewById(R.id.price_text_view);
+        priceTextVIew.setText(message);
     }
 
     /**
