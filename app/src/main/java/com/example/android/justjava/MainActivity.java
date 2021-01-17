@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private void displayMessage(String message) {
         TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
         orderSummaryTextView.setText(message);
+        //orderSummaryTextView.setTextSize(40);
     }
 
     /**
