@@ -5,9 +5,12 @@
     <string name="plus">+</string>
     <string name="order">Order</string>
     <string name="_0">$0</string>
-    <string name="_1">1</string>
+    <string name="_1">2</string>
     <string name="order_summary">Order summary</string>
     <string name="toppings">TOPPINGS</string>
     <string name="whipped_cream">Whipped cream</string>
     <string name="chocolate">Chocolate</string>
+    <string name="Name">Name</string>
+    <string name="name">Name</string>
+
 </resources>
