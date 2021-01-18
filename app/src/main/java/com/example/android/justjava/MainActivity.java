@@ -1,11 +1,12 @@
 package com.example.android.justjava;
 
 
-        import androidx.appcompat.app.AppCompatActivity;
-        import android.os.Bundle;
-        //import android.support.v7.app.AppCompatActivity;
-        import android.view.View;
-        import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.TextView;
 
 /**
  * This app displays an order form to order coffee.
@@ -25,19 +26,24 @@ public class MainActivity extends AppCompatActivity {
         return unitPrice * quantity;
     }
 
-    private String createOrderSummary(int price) {
-        return "Name: Ahmed Razic\nQuantity: " + quantity + "\nTotal: $" + price + "\nThank you";
+    private String createOrderSummary(int price, Boolean hasWhippedCream) {
+        return "Name: Ahmed Razic\nHas whipped cream: " + hasWhippedCream.toString() +
+                "\nQuantity: " + quantity + "\nTotal: $" + price + "\nThank you";
     }
 
     /**
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
+        CheckBox whippedCreamTopping = findViewById(R.id.checkBox_whipped_cream);
+        Boolean hasWhippedCream = whippedCreamTopping.isChecked();
+        Log.i("MainActivity.java", "Has whipped cream: " + hasWhippedCream.toString());
+
         //String priceMessage = "Amount due: $" + (5 * quantity);
         //String priceMessage = "That would be $" + (5 * quantity) + " please.";
         //String priceMessage = "You owe ten bucks, dude!";
         //String priceMessage = (5 * quantity) +  " dollars for " + quantity + " cups of coffee. Pay Up.";
-        displayMessage(createOrderSummary(calculatePrice(quantity)));
+        displayMessage(createOrderSummary(calculatePrice(quantity), hasWhippedCream));
     }
 
     private void displayMessage(String message) {
@@ -53,8 +59,6 @@ public class MainActivity extends AppCompatActivity {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + number);
     }
-
-
 
     public void incrementQuantity(View view) {
         quantity = quantity + 1;
