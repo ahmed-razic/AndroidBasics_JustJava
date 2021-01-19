@@ -10,7 +10,7 @@
     <string name="toppings">TOPPINGS</string>
     <string name="whipped_cream">Whipped cream</string>
     <string name="chocolate">Chocolate</string>
-    <string name="customerName">Name</string>
+    <string name="customerName">Your name</string>
 
     <!--
            Name for the order summary. It will be shown in the format of "Name: Amy" where Amy is the
