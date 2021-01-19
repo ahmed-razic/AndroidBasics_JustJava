@@ -1,6 +1,5 @@
 package com.example.android.justjava;
 
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -15,7 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.NumberFormat;
-
 
 /**
  * This app displays an order form to order coffee.
@@ -76,9 +74,10 @@ public class MainActivity extends AppCompatActivity {
         // Display the order summary on the screen
         String message = createOrderSummary(customerName, price, hasWhippedCream, hasChocolate);
 
+        displayMessage(message);
+
         composeEmail(new String[]{"ahmed.razic@gmail.com"}, "Order for coffee", message );
     }
-
 
     public void composeEmail(String[] addresses, String subject, String message) {
         Intent intent = new Intent(Intent.ACTION_SEND);
